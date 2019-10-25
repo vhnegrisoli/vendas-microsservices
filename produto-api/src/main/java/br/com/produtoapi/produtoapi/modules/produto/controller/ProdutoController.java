@@ -1,5 +1,6 @@
 package br.com.produtoapi.produtoapi.modules.produto.controller;
 
+import br.com.produtoapi.produtoapi.modules.produto.dto.ProdutoResponse;
 import br.com.produtoapi.produtoapi.modules.produto.model.Produto;
 import br.com.produtoapi.produtoapi.modules.produto.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,13 @@ public class ProdutoController {
         return produtoService.buscarTodos();
     }
 
+    @GetMapping("especificos")
+    public List<ProdutoResponse> buscarProdutosPorIds(@RequestParam("ids") List<Integer> ids) {
+        return produtoService.buscarPordutosPorIds(ids);
+    }
+
     @GetMapping("{id}")
-    public Produto buscarUm(@PathVariable Integer id) {
+    public ProdutoResponse buscarUm(@PathVariable Integer id) {
         return produtoService.buscarUm(id);
     }
 

@@ -41,6 +41,10 @@ public class Produto {
     @JoinColumn(name = "FK_CATEGORIA")
     private Categoria categoria;
 
+    @Column(name = "PRECO")
+    @NotNull
+    private Double preco;
+
     @Column(name = "USUARIO_ID")
     @NotNull
     private Integer usuarioId;

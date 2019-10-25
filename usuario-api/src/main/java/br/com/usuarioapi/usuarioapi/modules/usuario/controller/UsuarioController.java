@@ -1,6 +1,5 @@
 package br.com.usuarioapi.usuarioapi.modules.usuario.controller;
 
-import br.com.usuarioapi.usuarioapi.modules.usuario.client.UsuarioClient;
 import br.com.usuarioapi.usuarioapi.modules.usuario.dto.UsuarioAutenticado;
 import br.com.usuarioapi.usuarioapi.modules.usuario.dto.UsuarioRequest;
 import br.com.usuarioapi.usuarioapi.modules.usuario.model.Usuario;
@@ -19,8 +18,6 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
-    @Autowired
-    private UsuarioClient usuarioClient;
 
     @GetMapping
     public List<Usuario> getUsuarios() {

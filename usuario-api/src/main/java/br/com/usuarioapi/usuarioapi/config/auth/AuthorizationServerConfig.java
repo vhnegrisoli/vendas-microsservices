@@ -23,6 +23,7 @@ import static br.com.usuarioapi.usuarioapi.modules.usuario.enums.EPermissao.USER
 
 @Configuration
 @EnableAuthorizationServer
+@SuppressWarnings("MethodLength")
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
@@ -38,7 +39,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     private static final String APPLICATION_CLIENT = "usuario-api-client";
     private static final String APPLICATION_SECRET = "usuario-api-secret";
-    private static final String ROLE_APPLICATION = "ROLE_APPLICATION";
     private static final Integer TOKEN_VALIDITY_SECONDS = 0;
     @Value("${app-config.oauth-clients.produto-api.client}")
     private String produtoApiClient;

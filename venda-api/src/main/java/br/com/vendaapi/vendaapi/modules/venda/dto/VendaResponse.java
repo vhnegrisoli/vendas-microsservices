@@ -22,9 +22,9 @@ public class VendaResponse {
     private Integer id;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataCompra;
-    private String usuarioId;
-    private Integer usuarioNome;
-    private Integer usuarioEmail;
+    private Integer usuarioId;
+    private String usuarioNome;
+    private String usuarioEmail;
     private EVendaSituacao situacao;
     private String clienteNome;
     private String clienteEmail;
@@ -34,6 +34,7 @@ public class VendaResponse {
     public static VendaResponse of(Venda venda, List<ProdutoResponse> produtosVenda) {
         var response = new VendaResponse();
         BeanUtils.copyProperties(venda, response);
+        response.setProdutosVenda(produtosVenda);
         return response;
     }
 }

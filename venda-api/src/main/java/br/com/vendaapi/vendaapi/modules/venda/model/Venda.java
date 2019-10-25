@@ -23,7 +23,7 @@ import static org.springframework.util.ObjectUtils.isEmpty;
 @Builder
 @Data
 @Entity
-@Table(name = "PRODUTO")
+@Table(name = "VENDA")
 public class Venda {
 
     @Id

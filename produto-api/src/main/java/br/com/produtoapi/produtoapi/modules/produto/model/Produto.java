@@ -2,6 +2,7 @@ package br.com.produtoapi.produtoapi.modules.produto.model;
 
 import br.com.produtoapi.produtoapi.modules.categoria.model.Categoria;
 import br.com.produtoapi.produtoapi.modules.fornecedor.model.Fornecedor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import static org.springframework.util.ObjectUtils.isEmpty;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,4 +44,9 @@ public class Produto {
     @Column(name = "USUARIO_ID")
     @NotNull
     private Integer usuarioId;
+
+    @JsonIgnore
+    public boolean isNovoCadastro() {
+        return isEmpty(id);
+    }
 }

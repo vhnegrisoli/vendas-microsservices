@@ -45,6 +45,8 @@ public class OAuth2ResourceConfig extends ResourceServerConfigurerAdapter {
             .authorizeRequests()
             .antMatchers(permitAll).permitAll()
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            .antMatchers("/api/categorias/**").hasAnyRole(ADMIN.name(), USER.name())
+            .antMatchers("/api/fornecedores/**").hasAnyRole(ADMIN.name(), USER.name())
             .antMatchers("/api/produtos/**").hasAnyRole(ADMIN.name(), USER.name());
     }
 

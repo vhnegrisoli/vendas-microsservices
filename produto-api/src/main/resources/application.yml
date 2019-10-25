@@ -1,7 +1,8 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://localhost:5432/ms-produto
+    jdbc-url: jdbc:postgresql://sqlvhnegrisoli.ddns.net:5432/ms-produto
+#    jdbc-url: jdbc:postgresql://localhost:5432/ms-produto
     username: postgres
     password: 1y5h8j
     initialization-mode: always
@@ -49,4 +50,4 @@ security:
       filter-order: 3
 
 server:
-  port: 8080
+  port: 8081

@@ -81,14 +81,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
             .secret(bcryptPasswordEncoder.encode(produtoApiSecret))
             .authorizedGrantTypes("client_credentials")
             .scopes("produto-api")
-            .authorities(ROLE_APPLICATION)
+            .authorities(ADMIN.name(), USER.name())
 
             .and()
             .withClient(vendaApiClient)
             .secret(bcryptPasswordEncoder.encode(vendaApiSecret))
             .authorizedGrantTypes("client_credentials")
             .scopes("venda-api")
-            .authorities(ROLE_APPLICATION)
+            .authorities(ADMIN.name(), USER.name())
 
             .resourceIds("oauth2-resource")
             .accessTokenValiditySeconds(TOKEN_VALIDITY_SECONDS);

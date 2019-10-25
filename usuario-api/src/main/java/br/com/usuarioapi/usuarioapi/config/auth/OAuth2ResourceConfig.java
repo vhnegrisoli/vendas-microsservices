@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 
+import static br.com.usuarioapi.usuarioapi.modules.usuario.enums.EPermissao.ADMIN;
 import static br.com.usuarioapi.usuarioapi.modules.usuario.enums.EPermissao.USER;
 
 @Configuration
@@ -38,7 +39,7 @@ public class OAuth2ResourceConfig extends ResourceServerConfigurerAdapter {
             .authorizeRequests()
             .antMatchers(permitAll).permitAll()
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-            .antMatchers("/api/usuarios/**").hasAnyRole(USER.name(), USER.name());
+            .antMatchers("/api/usuarios/**").hasAnyRole(ADMIN.name(), USER.name());
     }
 
     @Override

@@ -1,6 +1,7 @@
 spring:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/ms-usuario
+    jdbc-url: jdbc:postgresql://sqlvhnegrisoli.ddns.net:5432/ms-usuario
+#    jdbc-url: jdbc:postgresql://localhost:5432/ms-usuario
     username: postgres
     password: 1y5h8j
     initialization-mode: always

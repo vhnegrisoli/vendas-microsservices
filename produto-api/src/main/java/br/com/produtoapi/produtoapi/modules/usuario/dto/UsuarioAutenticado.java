@@ -20,6 +20,6 @@ public class UsuarioAutenticado {
     private String cpf;
     private String permissao;
     private String descricao;
-    private LocalDateTime ultimoAcesso;
+    private String ultimoAcesso;
 
 }
